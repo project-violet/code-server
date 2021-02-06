@@ -35,6 +35,6 @@ violet.dev.master@code-server:~$ sudo sed -i 's/style-src/style-src fonts.google
 
 ```console
 # Download vsix file manually
-curl -L https://github.com/microsoft/vscode-cpptools/releases/download/1.1.3/cpptools-linux.vsix -o cpptools-linux.vsix
+violet.dev.master@code-server:~$ curl -L https://github.com/microsoft/vscode-cpptools/releases/download/1.1.3/cpptools-linux.vsix -o cpptools-linux.vsix
 # Then Ctrl+Shift+P => ext install vsix
 ```
