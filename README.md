@@ -15,8 +15,18 @@ violet.dev.master@code-server:~$ sudo service nginx reload
 
 ```console
 violet.dev.master@code-server:~$ curl -fsSL https://code-server.dev/install.sh | sh
-# Check your password
-violet.dev.master@code-server:~$ vim ~/.local/share/code-server
 # Start server
 violet.dev.master@code-server:~$ code-server
+# Check your password
+violet.dev.master@code-server:~$ vim ~/.local/share/code-server
+```
+
+### Install Fira Code Font
+
+```console
+violet.dev.master@code-server:~$ sudo apt update
+violet.dev.master@code-server:~$ sudo apt install fonts-firacode
+violet.dev.master@code-server:~$ sudo sed -i 's/<\/head>/<link type="text\/css" href="https:\/\/fonts.googleapis.com\/css2?family=Fira+Code:wght@300;400;500;600;700\&display=swap" rel="stylesheet"><\/head>/g' /usr/lib/code-server/src/browser/pages/vscode.html
+violet.dev.master@code-server:~$ sudo sed -i 's/font-src/font-src fonts.gstatic.com/g' /usr/lib/code-server/src/browser/pages/vscode.html
+violet.dev.master@code-server:~$ sudo sed -i 's/style-src/style-src fonts.googleapis.com/g' /usr/lib/code-server/src/browser/pages/vscode.html
 ```
