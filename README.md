@@ -30,3 +30,11 @@ violet.dev.master@code-server:~$ sudo sed -i 's/<\/head>/<link type="text\/css" 
 violet.dev.master@code-server:~$ sudo sed -i 's/font-src/font-src fonts.gstatic.com/g' /usr/lib/code-server/src/browser/pages/vscode.html
 violet.dev.master@code-server:~$ sudo sed -i 's/style-src/style-src fonts.googleapis.com/g' /usr/lib/code-server/src/browser/pages/vscode.html
 ```
+
+### Install C/C++
+
+```console
+# Download vsix file manually
+curl -L https://github.com/microsoft/vscode-cpptools/releases/download/1.1.3/cpptools-linux.vsix -o cpptools-linux.vsix
+# Then Ctrl+Shift+P => ext install vsix
+```
