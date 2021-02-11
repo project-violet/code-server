@@ -38,3 +38,23 @@ violet.dev.master@code-server:~$ sudo sed -i 's/style-src/style-src fonts.google
 violet.dev.master@code-server:~$ curl -L https://github.com/microsoft/vscode-cpptools/releases/download/1.1.3/cpptools-linux.vsix -o cpptools-linux.vsix
 # Then Ctrl+Shift+P => ext install vsix
 ```
+
+### Install Android SDK
+
+```console
+violet.dev.master@code-server:~$ sudo apt install openjdk-8-jdk
+violet.dev.master@code-server:~$ mkdir android
+violet.dev.master@code-server:~$ mkdir .android
+violet.dev.master@code-server:~$ touch .android/repositories.cfg
+violet.dev.master@code-server:~$ curl -o android_tools.zip https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
+violet.dev.master@code-server:~$ sudo apt install unzip
+violet.dev.master@code-server:~$ unzip -qq -d "android" android_tools.zip
+violet.dev.master@code-server:~$ rm android_tools.zip
+violet.dev.master@code-server:~$ mkdir -p android/cmdline-tools
+violet.dev.master@code-server:~$ mv android/tools android/cmdline-tools/tools
+violet.dev.master@code-server:~$ ./android/cmdline-tools/tools/bin/sdkmanager "build-tools;29.0.3"
+violet.dev.master@code-server:~$ ./android/cmdline-tools/tools/bin/sdkmanager "platforms;android-29"
+violet.dev.master@code-server:~$ ./android/cmdline-tools/tools/bin/sdkmanager "platform-tools"
+violet.dev.master@code-server:~$ ./android/cmdline-tools/tools/bin/sdkmanager "system-images;android-29;google_apis_playstore;x86_64
+violet.dev.master@code-server:~$ export ANDROID_HOME="/home/violet.dev.master/android"
+```
